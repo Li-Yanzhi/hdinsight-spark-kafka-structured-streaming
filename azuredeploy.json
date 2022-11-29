@@ -101,12 +101,12 @@
       ],
       "tags": { },
       "properties": {
-        "clusterVersion": "3.6",
+        "clusterVersion": "4.0",
         "osType": "Linux",
         "clusterDefinition": {
           "kind": "spark",
           "componentVersion": {
-            "Spark": "2.2"
+            "Spark": "2.4"
           },
           "configurations": {
             "gateway": {
@@ -132,7 +132,7 @@
               "name": "headnode",
               "targetInstanceCount": "2",
               "hardwareProfile": {
-                "vmSize": "Standard_D12_v2"
+                "vmSize": "Standard_E2_v3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -147,9 +147,9 @@
             },
             {
               "name": "workernode",
-              "targetInstanceCount": 4,
+              "targetInstanceCount": 1,
               "hardwareProfile": {
-                "vmSize": "Standard_D13_v2"
+                "vmSize": "Standard_E2_v3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -177,7 +177,7 @@
       ],
       "tags": { },
       "properties": {
-        "clusterVersion": "3.6",
+        "clusterVersion": "4.0",
         "osType": "Linux",
         "clusterDefinition": {
           "kind": "kafka",
@@ -206,7 +206,7 @@
               "name": "headnode",
               "targetInstanceCount": "2",
               "hardwareProfile": {
-                "vmSize": "Standard_D12_v2"
+                "vmSize": "Standard_E2_v3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -223,11 +223,11 @@
               "name": "workernode",
               "targetInstanceCount": 3,
               "hardwareProfile": {
-                "vmSize": "Standard_D13_v2"
+                "vmSize": "Standard_E2_v3"
               },
               "dataDisksGroups": [
                 {
-                  "disksPerNode": 2
+                  "disksPerNode": 1
                 }
               ],
               "osProfile": {
@@ -245,7 +245,7 @@
               "name": "zookeepernode",
               "targetInstanceCount": "3",
               "hardwareProfile": {
-                "vmSize": "Standard_A2_v2"
+                "vmSize": "Standard_E2_v3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
