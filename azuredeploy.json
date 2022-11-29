@@ -94,7 +94,7 @@
       "name": "[parameters('sparkClusterName')]",
       "type": "Microsoft.HDInsight/clusters",
       "location": "[resourceGroup().location]",
-      "apiVersion": "2015-03-01-preview",
+      "apiVersion": "2021-06-01",
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/',variables('defaultStorageAccount').name)]",
         "[concat('Microsoft.Network/virtualNetworks/',variables('networkConfig').name)]"
@@ -132,7 +132,7 @@
               "name": "headnode",
               "targetInstanceCount": "2",
               "hardwareProfile": {
-                "vmSize": "Standard_E2_v3"
+                "vmSize": "Standard_E2_V3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -149,7 +149,7 @@
               "name": "workernode",
               "targetInstanceCount": 1,
               "hardwareProfile": {
-                "vmSize": "Standard_E2_v3"
+                "vmSize": "Standard_E2_V3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -161,7 +161,25 @@
                 "id": "[resourceId('Microsoft.Network/virtualNetworks', variables('networkConfig').name)]",
                 "subnet": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('networkConfig').name), '/subnets/', variables('subnetConfig').name)]"
               }
-            }
+            },
+            {
+              "name": "zookeepernode",
+              "minInstanceCount": 1,
+              "targetInstanceCount": 3,
+              "hardwareProfile": {
+                "vmSize": "Standard_E2_V3"
+              },
+              "osProfile": {
+                "linuxOperatingSystemProfile": {
+                  "username": "[parameters('sshUserName')]",
+                  "password": "[parameters('sshPassword')]"
+                }
+              },
+              "virtualNetworkProfile": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks', variables('networkConfig').name)]",
+                "subnet": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('networkConfig').name), '/subnets/', variables('subnetConfig').name)]"
+              }
+            }            
           ]
         }
       }
@@ -206,7 +224,7 @@
               "name": "headnode",
               "targetInstanceCount": "2",
               "hardwareProfile": {
-                "vmSize": "Standard_E2_v3"
+                "vmSize": "Standard_E2_V3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -223,7 +241,7 @@
               "name": "workernode",
               "targetInstanceCount": 3,
               "hardwareProfile": {
-                "vmSize": "Standard_E2_v3"
+                "vmSize": "Standard_E2_V3"
               },
               "dataDisksGroups": [
                 {
@@ -245,7 +263,7 @@
               "name": "zookeepernode",
               "targetInstanceCount": "3",
               "hardwareProfile": {
-                "vmSize": "Standard_E2_v3"
+                "vmSize": "Standard_E2_V3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
