@@ -132,7 +132,7 @@
               "name": "headnode",
               "targetInstanceCount": "2",
               "hardwareProfile": {
-                "vmSize": "Standard_E2_V3"
+                "vmSize": "standard_e4_v3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -147,9 +147,9 @@
             },
             {
               "name": "workernode",
-              "targetInstanceCount": 1,
+              "targetInstanceCount": 2,
               "hardwareProfile": {
-                "vmSize": "Standard_E2_V3"
+                "vmSize": "standard_e4_v3"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
@@ -167,7 +167,7 @@
               "minInstanceCount": 1,
               "targetInstanceCount": 3,
               "hardwareProfile": {
-                "vmSize": "Standard_E2_V3"
+                "vmSize": "standard_a2_v2"
               },
               "osProfile": {
                 "linuxOperatingSystemProfile": {
